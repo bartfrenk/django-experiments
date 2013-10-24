@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>{% block title %}Base site{% endblock %}</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'style/custom.css' %}">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/datetimepicker.css' %}">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel = "stylesheet" media = "screen">
+  </head>
+  <body>
+    <script src = "http://code.jquery.com/jquery.js"></script>
+    <script src = "{% static 'bootstrap/js/bootstrap.js'%}"></script>
+    <script src = "{% static 'js/bootstrap-datetimepicker.js' %}"></script>
+    <script src = "{% static 'datetimeinterval/datetimeinterval.js' %}"></script>
+    <div id = "sidebar">
+      {% block sidebar %}{% endblock %}
+    </div>
+    <div id = "content">
+      {% block content %}{% endblock %}
+    </div>
+    <hr />
+    <button id="debug_button">Debug</button>
+    <hr />
+    <p id="debug_output">
+    </p>
+  </body>
+</html>
